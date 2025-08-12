@@ -1,6 +1,6 @@
 // Validation middleware for API requests
 
-const Joi = require('joi');
+import Joi from 'joi';
 
 // Reserved names that cannot be used for alerts
 const RESERVED_NAMES = ['default', 'system', 'admin', 'root', 'null', 'undefined'];
@@ -73,7 +73,7 @@ const validateRequest = (schema) => {
 // Specific validation middleware for impact analysis
 const validateImpactAnalysis = validateRequest(impactAnalysisSchema);
 
-module.exports = {
+export {
   validateImpactAnalysis,
   validateRequest,
   alertNameSchema,

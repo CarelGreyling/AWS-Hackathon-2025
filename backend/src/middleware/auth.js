@@ -73,7 +73,7 @@ const authorizeAccount = (req, res, next) => {
   next();
 };
 
-module.exports = {
+export {
   authenticateToken,
   authorizeAccount
 };

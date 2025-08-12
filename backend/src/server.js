@@ -1,21 +1,21 @@
 // Express server with full impact analysis integration (TDD GREEN phase)
 
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 // Import middleware
-const { validateImpactAnalysis } = require('./middleware/validation');
-const { authenticateToken, authorizeAccount } = require('./middleware/auth');
-const { auditRequest } = require('./middleware/audit');
-const { apiRateLimiter, impactAnalysisRateLimiter } = require('./middleware/rateLimiter');
+import { validateImpactAnalysis } from './middleware/validation.js';
+import { authenticateToken, authorizeAccount } from './middleware/auth.js';
+import { auditRequest } from './middleware/audit.js';
+import { apiRateLimiter, impactAnalysisRateLimiter } from './middleware/rateLimiter.js';
 
 // Import services
-const { analyzeImpact } = require('./services/impactAnalysisService');
-const { 
+import { analyzeImpact } from './services/impactAnalysisService.js';
+import { 
   checkAlertNameExists, 
   getHistoricalData, 
   storeImpactAnalysis 
-} = require('./services/databaseService');
+} from './services/databaseService.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -197,4 +197,4 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-module.exports = app;
+export default app;
