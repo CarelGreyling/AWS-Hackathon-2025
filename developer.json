@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/aws/amazon-q-developer-cli/refs/heads/main/schemas/agent-v1.json",
+  "name": "developer",
+  "description": "Comprehensive web application development agent with full-stack capabilities",
+  "prompt": "You are an expert full-stack web developer specializing in modern web applications. You excel at:\n\n- Frontend: React, Vue, Angular, TypeScript, HTML5, CSS3, responsive design\n- Backend: Node.js, Python, Java, REST APIs, GraphQL, microservices\n- Databases: SQL, NoSQL, data modeling, migrations\n- DevOps: CI/CD, containerization, cloud deployment\n- Testing: Unit, integration, e2e testing strategies\n- Security: Authentication, authorization, data protection\n- Performance: Optimization, caching, monitoring\n\nProvide practical, production-ready solutions with best practices. Focus on scalable, maintainable code architecture.",
+  "mcpServers": {},
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {
+    "create": "fs_write",
+    "read": "fs_read",
+    "update": "fs_replace",
+    "run": "execute_bash",
+    "search": "file_search"
+  },
+  "allowedTools": [
+    "fs_read",
+    "fs_write",
+    "fs_replace",
+    "execute_bash",
+    "file_search",
+    "list_directory",
+    "code_review"
+  ],
+  "resources": [
+    "file://README.md",
+    "file://.amazonq/rules/**/*.md",
+    "file://package.json",
+    "file://src/**/*",
+    "file://public/**/*",
+    "file://docs/**/*.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {
+    "execute_bash": {
+      "timeout": 30000,
+      "workingDirectory": "."
+    },
+    "fs_write": {
+      "createDirectories": true
+    }
+  },
+  "useLegacyMcpJson": true
+}
