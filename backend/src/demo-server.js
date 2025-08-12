@@ -7,7 +7,15 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Basic middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://d3312o90ut997k.cloudfront.net',
+    /\.cloudfront\.net$/,
+    /\.amazonaws\.com$/
+  ],
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -206,11 +214,12 @@ app.use('*', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
   console.log(`🚀 Parameter Risk Analysis Demo Server`);
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/health`);
-  console.log(`API endpoint: http://localhost:${PORT}/api/v1/alerts/impact-analysis`);
+  console.log(`Server running on ${HOST}:${PORT}`);
+  console.log(`Health check: http://${HOST}:${PORT}/health`);
+  console.log(`API endpoint: http://${HOST}:${PORT}/api/v1/alerts/impact-analysis`);
   console.log(`Ready for demo! 🎯`);
 });
 

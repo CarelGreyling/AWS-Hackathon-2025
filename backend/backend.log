@@ -1,0 +1,7 @@
+🚀 Parameter Risk Analysis Demo Server
+Server running on 0.0.0.0:3001
+Health check: http://0.0.0.0:3001/health
+API endpoint: http://0.0.0.0:3001/api/v1/alerts/impact-analysis
+Ready for demo! 🎯
+2025-08-12T06:28:36.087Z - GET /health
+2025-08-12T06:29:23.086Z - GET /

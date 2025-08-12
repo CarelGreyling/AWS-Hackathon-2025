@@ -1,0 +1,18 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.6,
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontSize": 14,
+  "workbench.startupEditor": "none",
+  "explorer.compactFolders": false,
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.side": "right",
+  "workbench.editor.enablePreview": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "livePreview.defaultPreviewPath": "/demo-redirect.html",
+  "simpleBrowser.focusLockIndicator.enabled": true
+}

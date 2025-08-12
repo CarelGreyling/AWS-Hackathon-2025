@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Demo: Open Application",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/demo-redirect.html",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
